@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 bevy = "0.5.0"
+bevy-modding = { version = "0.1.0", path = "../../../bevy-modding"}

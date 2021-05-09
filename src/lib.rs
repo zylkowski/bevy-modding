@@ -1,5 +1,6 @@
+extern crate live_reload;
+
 use bevy::prelude::*;
-use live_reload;
 use walkdir::WalkDir;
 
 /// Live reload api for communication between mod and main game
@@ -26,7 +27,6 @@ impl Plugin for ModdingPlugin<'static> {
             .filter_map(|e| e.ok())
         {
             let f_name = entry.file_name().to_string_lossy();
-            println!("File: {}", f_name);
             if f_name.ends_with(".so"){
                 let host_api = Host { app_builder: app };
                 ModLoader::new(entry.path(),host_api);
