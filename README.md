@@ -4,7 +4,7 @@ Simple plugin enabling you to make your game moddable in Bevy engine. Basically 
 ## Usage
 In the `main.rs` file add `ModdingPlugin` with the bevy `AppBulder`, remember to specify mods folder path.
 Create separate crate for your mod and add
-```
+```toml
 [lib]
 crate-type = ["cdylib"]
 
@@ -14,7 +14,7 @@ bevy = "0.5.0"
 bevy-modding = { version = "0.1.0", path = "path"}
 ```
 To the `Cargo.toml` file of the mod. Then in order for your mod to be properly mod loaded you need to use macro that let's for communication between mod and main game. You do that like this:
-```
+```rust
 #[macro_use]            // Let's you use macro from other crate
 
 use bevy::prelude::*;
@@ -30,7 +30,7 @@ mod_loader!{
 }
 ```
 Your init function can look like this:
-```
+```rust
 fn hello_from_mod(){
     println!("Hello from mod!");
 }
