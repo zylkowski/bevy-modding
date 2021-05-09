@@ -1,5 +1,5 @@
 # bevy-modding
-Simple plugin enabling you to make your game moddable in Bevy engine
+Simple plugin enabling you to make your game moddable in Bevy engine. Basically it loads native library and calls `init()` function. Modders have complete access to bevy's `AppBuilder` and can add systems, plugins, assets etc.
 
 ## Usage
 1. Add plugin to your bevy app and specify mod folder path
