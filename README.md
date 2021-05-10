@@ -3,6 +3,7 @@ Simple plugin enabling you to make your game moddable in Bevy engine. Basically 
 
 ## Usage
 You have to bear in mind that all mods supplied for your game NEED to be compiled with the same version of compiler as game and to the same target platform as the game.
+
 In the `main.rs` file add `ModdingPlugin` with the bevy `AppBulder`, remember to specify mods folder path.
 Create separate crate for your mod and add
 ```toml
