@@ -1,15 +1,15 @@
-#[macro_use]
+#[macro_use]            // Let's you use macro from other crate
 
 use bevy::prelude::*;
 use bevy_modding::*;
 
 #[repr(C)]
-struct State;
+struct State;           // State struct, it's needed by crate that loads your mod
 
 mod_loader!{
     host: Host;
     state: State;
-    init: init;
+    init: init;         // Passing initialize function for your mod
 }
 
 fn hello_from_mod(){

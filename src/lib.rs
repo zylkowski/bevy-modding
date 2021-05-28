@@ -29,7 +29,7 @@ impl Plugin for ModdingPlugin<'static> {
             let f_name = entry.file_name().to_string_lossy();
             if f_name.ends_with(".so"){
                 let host_api = Host { app_builder: app };
-                ModLoader::new(entry.path(),host_api);
+                ModLoader::new(entry.path(),host_api).expect("Cannot load the mod!");
             }
         }
     }
